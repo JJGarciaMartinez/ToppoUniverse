@@ -27,7 +27,7 @@
 <!-- wow Animation css -->
 <link rel="stylesheet" href="css/animate.css" />
 <!-- end zoom effect -->
-<link rel="icon" type="images/png" href="../images/peto1.png">
+<link rel="icon" type="images/png" href="../images/peto6.png">
 <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -45,10 +45,10 @@
         <div class="full">
           <div class="title-holder">
             <div class="title-holder-cell text-left">
-              <h1 class="page-title"style="font-family: 'Trebuchet MS';cursor: default;">Rango Cuero</h1>
+              <h1 class="page-title"style="font-family: 'Trebuchet MS';cursor: default;">Rango Netherite</h1>
               <ol class="breadcrumb">
                 <li><a href="../index.html" style="font-family: 'Trebuchet MS'; color: #fff;">Principal</a></li>
-                <li class="active" style="font-family: 'Trebuchet MS'; color: #fc1053; cursor: default;">Rango Cuero</li>
+                <li class="active" style="font-family: 'Trebuchet MS'; color: #fc1053; cursor: default;">Rango Netherite</li>
               </ol>
             </div>
           </div>
@@ -64,13 +64,13 @@
       <div class="col-md-9">
         <div class="row">
           <div class="col-xl-6 col-lg-12 col-md-12">
-              <div class='hizoom hi2'> <img src="../images/peto1.png" alt="#" /> </div>
+              <div class='hizoom hi2'> <img src="../images/peto6.png" alt="#" /> </div>
               
             
           </div>
           <div class="col-xl-6 col-lg-12 col-md-12 product_detail_side detail_style1">
             
-              <h2 style="font-family: 'Trebuchet MS';cursor: default;">Rango Cuero</h2>
+              <h2 style="font-family: 'Trebuchet MS';cursor: default;">Rango Netherite</h2>
               <hr color="#cf436b" size="18px">
               <div id="smart-button-container">
                 <div style="text-align: center;">
@@ -80,48 +80,55 @@
             </div>
             
             </div>
-            <div class="" style="font-family: 'Trebuchet MS'; font-size: 1.4cm;cursor: default;">$15.00 MX  <img src="../images/counter-3.png"></span><hr color="#cf436b" size="18px"> <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=MXN" data-sdk-integration-source="button-factory"></script>
-              <script>
-                function initPayPalButton() {
-                  paypal.Buttons({
-                    style: {
-                      shape: 'rect',
-                      color: 'gold',
-                      layout: 'vertical',
-                      label: 'buynow',
+            <div class="" style="font-family: 'Trebuchet MS'; font-size: 1.4cm;cursor: default;">$110.00 MX  <img src="../images/counter-3.png"></span><hr color="#cf436b" size="18px"> <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=MXN" data-sdk-integration-source="button-factory"></script>
+              <div id="smart-button-container">
+                <div style="text-align: center;">
+                  <div id="paypal-button-container"></div>
+                </div>
+              </div>
+            <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=MXN" data-sdk-integration-source="button-factory"></script>
+            <script>
+              function initPayPalButton() {
+                paypal.Buttons({
+                  style: {
+                    shape: 'rect',
+                    color: 'gold',
+                    layout: 'vertical',
+                    label: 'buynow',
+                    
+                  },
+          
+                  createOrder: function(data, actions) {
+                    return actions.order.create({
+                      purchase_units: [{"description":"El rango alto de los VIP, permanente.","amount":{"currency_code":"MXN","value":110}}]
+                    });
+                  },
+          
+                  onApprove: function(data, actions) {
+                    return actions.order.capture().then(function(orderData) {
                       
-                    },
-            
-                    createOrder: function(data, actions) {
-                      return actions.order.create({
-                        purchase_units: [{"description":"Rango Cuero, el mas bajo de los VIP. Pago mensual.","amount":{"currency_code":"MXN","value":15}}]
-                      });
-                    },
-            
-                    onApprove: function(data, actions) {
-                      return actions.order.capture().then(function(orderData) {
-                        
-                        // Full available details
-                        console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
-            
-                        // Show a success message within this page, e.g.
-                        const element = document.getElementById('paypal-button-container');
-                        element.innerHTML = '';
-                        element.innerHTML = '<h3>Thank you for your payment!</h3>';
-            
-                        // Or go to another URL:  actions.redirect('thank_you.html');
-                        
-                      });
-                    },
-            
-                    onError: function(err) {
-                      console.log(err);
-                    }
-                  }).render('#paypal-button-container');
-                }
-                initPayPalButton();
-              </script></div>
-              <p style="font-size: 20px;cursor: default;">Este es el mas bajo de todos los VIP, el rango <u style="font-family:'Trebuchet MS'; font: bold;">CUERO</u> el cual es de pago mensual.<br/><br/><b style="font-family: 'Trebuchet MS'; color: #fc1053; font-size: 15px;">Si quieres saber mas leé la description del producto.</b></p>
+                      // Full available details
+                      console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+          
+                      // Show a success message within this page, e.g.
+                      const element = document.getElementById('paypal-button-container');
+                      element.innerHTML = '';
+                      element.innerHTML = '<h3>Thank you for your payment!</h3>';
+          
+                      // Or go to another URL:  actions.redirect('thank_you.html');
+                      
+                    });
+                  },
+          
+                  onError: function(err) {
+                    console.log(err);
+                  }
+                }).render('#paypal-button-container');
+              }
+              initPayPalButton();
+            </script>
+            </div>
+              <p style="font-size: 20px;cursor: default;">El mas alto de los VIP, el rango  <u style="font-family:'Trebuchet MS'; font: bold;">NETHERITE</u> pago unico y permanente.<br/><br/><b style="font-family: 'Trebuchet MS'; color: #fc1053; font-size: 15px;">Si quieres saber mas leé la description del producto.</b></p>
                 
         <div class="row">
           <div class="col-md-12">
@@ -133,7 +140,14 @@
                 <!-- Tab panes -->
                 <div class="tab-content">
                     <div class="product_desc">
-                      <p style="font-size: 15px;cursor: default;">El rango <u style="font-family:'Trebuchet MS'; font: bold;">CUERO</u> te dara la posibilidad de poder escojer un unico terreno de 10x10 paraproteger contra explosiones y ademas un color gris en tu prefijo. Ejemplo:<b style="font-family: 'Trebuchet MS'; color: gray;">[Miembro]</b>, y ademas te incluye una pequeña insignia para reconocer tu apoyo mensualmente.</p><br/><br/><br/>
+                      <p style="font-size: 15px;cursor: default;"><br>- Prefijo de rango por defecto: <b style="font-family: 'Trebuchet MS'; color: #84E738;">[Miembro⛏]</b>
+                        <br>- La posibilidad de protejer tu base completa (casa, sala de cofres)
+                        <br>- Escojer un color para su prefijo (ejemplo: <b style="color: burlywood; font-family: 'Trebuchet MS';">[Miembro⛏]</b>)
+                        <br>- Elegir el color de tu username y cambiarlo si deseas hasta tres veces (ejemplo:<b style="color: burlywood; font-family: 'Trebuchet MS';">[Miembro]</b> <b style="color: greenyellow; font-family: 'Trebuchet MS';">Player1</b>)
+                        <br>- Cambiar el color tu letra en el chat y podras cambiarlo hasta dos veces mas (ejemplo:<b style="color: burlywood; font-family: 'Trebuchet MS';">[Miembro]</b> <b style="color: greenyellow; font-family: 'Trebuchet MS';">Player1</b>»<b style="font-family: 'Trebuchet MS'; color: chocolate;">Hola!!</b>)
+                        <br>- Se te colocara un command block en tu base para que te hagas tp al spawn cuando quieras
+                        <br>- Y como agradecimiento se te otorgara una insignia la cual tu podras escojer cual será, rol en discord personalizado.
+                      </p> <br/><br/><br/><br/><br/>
                     </div>
 
 <!-- footer -->
