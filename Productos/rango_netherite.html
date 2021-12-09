@@ -71,6 +71,27 @@
           <div class="col-xl-6 col-lg-12 col-md-12 product_detail_side detail_style1">
             
               <h2 style="font-family: 'Trebuchet MS';cursor: default;">Rango Netherite</h2>
+              <div id="paypal-button-container-P-6JG00647WM100650SMGZEOZY"></div>
+<script src="https://www.paypal.com/sdk/js?client-id=AeZJkUGeC0y0hVHDF9fWcBkMDwPRcoqn7DD4a_Jkg56e6FOAwxpeKnQM1l0mADQQ7Q2t0UxvGiJ16yUa&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+<script>
+  paypal.Buttons({
+      style: {
+          shape: 'rect',
+          color: 'gold',
+          layout: 'vertical',
+          label: 'subscribe'
+      },
+      createSubscription: function(data, actions) {
+        return actions.subscription.create({
+          /* Creates the subscription */
+          plan_id: 'P-6JG00647WM100650SMGZEOZY'
+        });
+      },
+      onApprove: function(data, actions) {
+        alert(data.subscriptionID); // You can add optional success message for the subscriber here
+      }
+  }).render('#paypal-button-container-P-6JG00647WM100650SMGZEOZY'); // Renders the PayPal button
+</script>
               <hr color="#cf436b" size="18px">
               <div id="smart-button-container">
                 <div style="text-align: center;">
@@ -80,53 +101,7 @@
             </div>
             
             </div>
-            <div class="" style="font-family: 'Trebuchet MS'; font-size: 1.4cm;cursor: default;">$110.00 MX  <img src="../images/counter-3.png"></span><hr color="#cf436b" size="18px"> <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=MXN" data-sdk-integration-source="button-factory"></script>
-              <div id="smart-button-container">
-                <div style="text-align: center;">
-                  <div id="paypal-button-container"></div>
-                </div>
-              </div>
-            <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=MXN" data-sdk-integration-source="button-factory"></script>
-            <script>
-              function initPayPalButton() {
-                paypal.Buttons({
-                  style: {
-                    shape: 'rect',
-                    color: 'gold',
-                    layout: 'vertical',
-                    label: 'buynow',
-                    
-                  },
-          
-                  createOrder: function(data, actions) {
-                    return actions.order.create({
-                      purchase_units: [{"description":"El rango alto de los VIP, permanente.","amount":{"currency_code":"MXN","value":110}}]
-                    });
-                  },
-          
-                  onApprove: function(data, actions) {
-                    return actions.order.capture().then(function(orderData) {
-                      
-                      // Full available details
-                      console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
-          
-                      // Show a success message within this page, e.g.
-                      const element = document.getElementById('paypal-button-container');
-                      element.innerHTML = '';
-                      element.innerHTML = '<h3>Thank you for your payment!</h3>';
-          
-                      // Or go to another URL:  actions.redirect('thank_you.html');
-                      
-                    });
-                  },
-          
-                  onError: function(err) {
-                    console.log(err);
-                  }
-                }).render('#paypal-button-container');
-              }
-              initPayPalButton();
-            </script>
+            <div class="" style="font-family: 'Trebuchet MS'; font-size: 1.4cm;cursor: default;">$110.00 MX  <img src="../images/counter-3.png"></span><hr color="#cf436b" size="18px"> 
             </div>
               <p style="font-size: 20px;cursor: default;">El mas alto de los VIP, el rango  <u style="font-family:'Trebuchet MS'; font: bold;">NETHERITE</u> pago unico y permanente.<br/><br/><b style="color: #cf436b; font-family:'Trebuchet MS';">Para concretar la compra por favor de manda tu comprobante al siguiente <a href="mailto:toppouniverse.mc@gmail.com" style="color: #cf436b;font-family:'Trebuchet MS'; font-style: italic;">: Correo</a></b><br/><b style="font-family: 'Trebuchet MS'; color: #fc1053; font-size: 15px;">Si quieres saber del producto leé la Descripcion.<br/></b></p>
                 
