@@ -4,7 +4,7 @@ fue usada para un proyecto personal, donde queria distribuir rangos para un serv
 pagina ya que fue mi introduccion a mayor profundidad a JavaScript y a algunos Framewoks.
 
 
-#Usos
+# Usos
 Ya que esta pagina fue extraida de freehtml5.co, es de uso libre, esta es una plantilla más, si la quieres utilizar solo descarga el contenido.
 
 Advertencia. Todos los botones que diriguen a un pago en Paypal ya no funcionan de manera correcta, si se desea utilizar esta pagina se debe de sustituir dichos botones
