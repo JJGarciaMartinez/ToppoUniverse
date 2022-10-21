@@ -1,4 +1,4 @@
-# Toppos
+# ToppoUniverse
 Esta pagina es un edit de la plantilla "Author" creada y diseñada por freehtml5.co, donde se encuentran distintas plantillas de uso gratuito. La pagina
 fue usada para un proyecto personal, donde queria distribuir rangos para un servidor del videojuego llamado Minecraft, el servidor ya cerró pero quiero mantener esta
 pagina ya que fue mi introduccion a mayor profundidad a JavaScript y a algunos Framewoks.
